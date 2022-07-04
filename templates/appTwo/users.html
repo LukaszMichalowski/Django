@@ -7,23 +7,19 @@
         <title>Users</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     </head>
     <body>
-        <h1>Here are some users for AppTwo:</h1>
-        {%if users %}
-        <ol>
-        {%for person in users %}
-            <li>User info</li>
-                <ul>
-                    <li> First name: {{person.first_name}}</li>
-                    <li> Last name: {{person.last_name}}</li>
-                    <li> Email: {{person.email}}</li>
+        <div class="container">
+            <h1>Please sign up here!</h1>
+            <form method="POST">
+                {{form.as_p}}
+                {%csrf_token%}
+                <input type= "submit" class="btn btn-primary" value="Submit">
+            </form>
 
-                </ul>
-        {% endfor %}
-        </ol>
-        {%endif %}
+        </div>
+     
 
         <script src="" async defer></script>
     </body>
